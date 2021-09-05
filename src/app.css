@@ -1,0 +1,28 @@
+h2 {
+    font-size: 20px;
+    color: rgb(247, 247, 247);
+}
+h1{
+font-size: 15px;
+    color: rgb(247, 247, 247);
+}
+p {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: rgb(62, 62, 60);
+}
+.app {
+    background-color: #fafaf9;
+    height: 100vh;
+    overflow: scroll;
+}
+.cardbox{
+    width: 20px;
+}
+.container{
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: rgb(112, 54, 67);
+}
+.delbtn{
+    background-color: blueviolet;
+}

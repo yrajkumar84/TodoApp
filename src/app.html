@@ -1,0 +1,82 @@
+<template>
+	<lightning-card title="To Do list" style="width:100%">
+		<lightning-button-icon icon-name="utility:sync" alternative-text="Sync" title="Settings" slot="actions">
+		</lightning-button-icon>
+		<lightning-layout>
+			<lightning-layout-item padding="around-small" size="12">
+				<ul class="slds-has-dividers_around-space task">
+					<template for:each={todoTask} for:item='task'>
+						<li class="slds-item" key={task.id}>
+							<div class="container">
+								<h2>{task.title}</h2>
+								<h1>{task.name}</h1>
+								<lightning-button name={task.id} onclick={deleteTask} icon-name="utility:delete" variant="destructive"
+									label="Delete">
+								</lightning-button>
+							</div>
+
+
+							<!-- <lightning-layout vertical-align="center" horizontal-align="spread">
+								<lightning-layout-item padding="horizontal-small">{task.title} </lightning-layout-item>
+								<lightning-layout-item padding="horizontal-small">{task.name} </lightning-layout-item>
+								<lightning-layout-item>
+									<lightning-button-icon name={task.id} onclick={deleteTask} icon-name="utility:delete"
+										alternative-text="Delete" title="Delete">
+									</lightning-button-icon>
+								</lightning-layout-item>
+							</lightning-layout>
+						</li> -->
+
+							<!-- <lightning-layout vertical-align="center" horizontal-align="spread">
+								<lightning-layout-item>{task.title} </lightning-layout-item>
+								<lightning-layout-item>{task.name} </lightning-layout-item>
+								<lightning-layout-item>
+									<lightning-button-icon name={task.id} onclick={deleteTask} icon-name="utility:delete"
+										alternative-text="Delete" title="Delete">
+									</lightning-button-icon>
+								</lightning-layout-item>
+							</lightning-layout> -->
+						</li>
+					</template>
+					<!-- <li class="slds-item">
+						<lightning-layout vertical-align="center" horizontal-align="spread">
+							<lightning-layout-item padding="horizontal-small">Task 1 </lightning-layout-item>
+							<lightning-layout-item>
+								<lightning-button-icon icon-name="utility:delete" alternative-text="Delete" title="Delete">
+								</lightning-button-icon>
+							</lightning-layout-item>
+						</lightning-layout>
+					</li> -->
+
+				</ul>
+			</lightning-layout-item>
+		</lightning-layout>
+		<p slot="footer">
+			<lightning-input onchange={handleInputTitle} value={newTitle} type="text" required label="todo"
+				variant="label-hidden" placeholder="Enter title ">
+			</lightning-input>
+			<!-- <textarea onchange={handleInput} value={newTask} type="text" required label="todo"
+			 variant="label-hidden"
+				placeholder="Enter todo ">
+			</textarea> -->
+			<lightning-textarea onchange={handleInput} value={newTask} required label="todo" variant="label-hidden"
+				placeholder="Enter todo">
+			</lightning-textarea>
+			<!-- <textarea id="textarea-id-01" placeholder="Placeholder text…" class="slds-textarea"></textarea> -->
+
+			<lightning-button variant="brand" label="Brand" onclick={addNewTask}></lightning-button>
+			<!-- <lightning-layout pull-to-boundary="small">
+				<lightning-layout-item padding="horizontal-small" flexibility="grow">
+					<lightning-input onchange={handleInput} value={newTask} type="text" required label="todo"
+						variant="label-hidden" placeholder="Enter todo ">
+					</lightning-input>
+				</lightning-layout-item>
+				<lightning-layout-item padding="horizontal-small">
+					<lightning-button variant="brand" label="Brand" onclick={addNewTask}></lightning-button>
+				</lightning-layout-item>
+			</lightning-layout> -->
+		</p>
+	</lightning-card>
+
+
+</template>
